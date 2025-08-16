@@ -1,14 +1,16 @@
 [project]
-name = 'Multi-Sig-Wallet'
+name = 'sBTC-Vault'
 description = ''
 authors = []
 telemetry = false
 cache_dir = './.cache'
-requirements = []
-[contracts.mullti-sig-wallet]
-path = 'contracts/mullti-sig-wallet.clar'
-clarity_version = 2
-epoch = 2.5
+
+[[project.requirements]]
+contract_id = 'SM3VDXK3WZZSA84XXFKAFAF15NNZX32CTSG82JFQ4.sbtc-deposit'
+[contracts.sbtc-vault-v6]
+path = 'contracts/sbtc-vault-v6.clar'
+clarity_version = 3
+epoch = 'latest'
 [repl.analysis]
 passes = ['check_checker']
 
@@ -17,3 +19,7 @@ strict = false
 trusted_sender = false
 trusted_caller = false
 callee_filter = false
+
+[repl.remote_data]
+enabled = false
+api_url = 'https://api.hiro.so'
